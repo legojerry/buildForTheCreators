@@ -1,160 +1,159 @@
-								  
-import React, { useEffect, useState } from 'react';
-import UserDataFetcher from "/src/components/UserDataFetcher";
+import React, { useEffect, useState } from "react"
+import UserDataFetcher from "/src/components/UserDataFetcher"
 
 const UserDataComponent = ({ apiUrl }) => {
-  const [displayName, setDisplayName] = useState('');
+  const [displayName, setDisplayName] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl)
         if (!response.ok) {
-          throw new Error('Failed to fetch user data');
+          throw new Error("Failed to fetch user data")
         }
-        const userData = await response.json();
-        const userDisplayName = userData.result.user.displayName;
-        setDisplayName(userDisplayName);
+        const userData = await response.json()
+        const userDisplayName = userData.result.user.displayName
+        setDisplayName(userDisplayName)
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error)
       }
-    };
+    }
 
-    fetchData();
-  }, [apiUrl]); // Dependency array includes apiUrl to re-fetch data when it changes
+    fetchData()
+  }, [apiUrl]) // Dependency array includes apiUrl to re-fetch data when it changes
 
   return (
     <div>
       <h2>User Display Name:</h2>
       <p>{displayName}</p>
     </div>
-  );
-};
+  )
+}
 
 const HeroSlider = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false)
 
   const handleAnchorClick = () => {
-    setIsClicked(true);
-  };
+    setIsClicked(true)
+  }
 
   useEffect(() => {
-    const fn_cs_slider = document.querySelectorAll(".fn_cs_slider");
+    const fn_cs_slider = document.querySelectorAll(".fn_cs_slider")
     fn_cs_slider.forEach((element) => {
       let sliderTop = element.getElementsByClassName("slider_top")[0],
         sliderBottom = element.getElementsByClassName("slider_content"),
         activeIndex = 1,
-        speed = 21999999999;
+        speed = 21999999999
 
       let myInterval = setInterval(function () {
-        activeIndex++;
-        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
-      }, speed);
+        activeIndex++
+        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
+      }, speed)
       const prev = document.querySelector(".slider_nav .prev"),
         next = document.querySelector(".slider_nav .next"),
-        li = element.getElementsByTagName("li");
+        li = element.getElementsByTagName("li")
       prev.addEventListener("click", function (e) {
-        e.preventDefault();
-        clearInterval(myInterval);
-        activeIndex--;
-        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
+        e.preventDefault()
+        clearInterval(myInterval)
+        activeIndex--
+        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
         myInterval = setInterval(function () {
-          activeIndex++;
-          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
-        }, speed);
-        return false;
-      });
+          activeIndex++
+          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
+        }, speed)
+        return false
+      })
       next.addEventListener("click", (e) => {
-        e.preventDefault();
-        clearInterval(myInterval);
-        activeIndex++;
-        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
+        e.preventDefault()
+        clearInterval(myInterval)
+        activeIndex++
+        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
         myInterval = setInterval(function () {
-          activeIndex--;
-          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
-        }, speed);
-        return false;
-      });
+          activeIndex--
+          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
+        }, speed)
+        return false
+      })
       for (let i = 0; i < li.length; i++) {
-        const liElement = li[i];
-        const getClass = liElement.getAttribute("class");
+        const liElement = li[i]
+        const getClass = liElement.getAttribute("class")
         if (getClass === "next") {
-          activeIndex++;
+          activeIndex++
         } else if (getClass === "prev") {
-          activeIndex--;
+          activeIndex--
         } else {
-          return false;
+          return false
         }
-        clearInterval(myInterval);
-        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
+        clearInterval(myInterval)
+        activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
         myInterval = setInterval(function () {
-          activeIndex++;
-          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex);
-        }, speed);
-        return false;
+          activeIndex++
+          activeIndex = sliderDo(sliderTop, sliderBottom, activeIndex)
+        }, speed)
+        return false
       }
-    });
-  }, []);
+    })
+  }, [])
 
   const sliderDo = (sliderTop, sliderBottom, activeIndex) => {
-    var topLength = sliderTop.getElementsByTagName("li").length;
+    var topLength = sliderTop.getElementsByTagName("li").length
     if (activeIndex > topLength) {
-      activeIndex -= topLength;
+      activeIndex -= topLength
     }
-    var indexPrev = activeIndex - 1;
-    var indexPrev2 = activeIndex - 2;
-    var indexNext = activeIndex + 1;
-    var indexNext2 = activeIndex + 2;
+    var indexPrev = activeIndex - 1
+    var indexPrev2 = activeIndex - 2
+    var indexNext = activeIndex + 1
+    var indexNext2 = activeIndex + 2
     if (indexPrev > topLength) {
-      indexPrev -= topLength;
+      indexPrev -= topLength
     }
     if (indexPrev2 > topLength) {
-      indexPrev2 -= topLength;
+      indexPrev2 -= topLength
     }
     if (indexNext > topLength) {
-      indexNext -= topLength;
+      indexNext -= topLength
     }
     if (indexNext2 > topLength) {
-      indexNext2 -= topLength;
+      indexNext2 -= topLength
     }
     if (indexPrev < 1) {
-      indexPrev += topLength;
+      indexPrev += topLength
     }
     if (indexPrev2 < 1) {
-      indexPrev2 += topLength;
+      indexPrev2 += topLength
     }
     if (activeIndex < 1) {
-      activeIndex += topLength;
+      activeIndex += topLength
     }
     if (indexNext < 1) {
-      indexNext += topLength;
+      indexNext += topLength
     }
     if (indexNext2 < 1) {
-      indexNext2 += topLength;
+      indexNext2 += topLength
     }
-    let li = sliderTop.getElementsByTagName("li");
+    let li = sliderTop.getElementsByTagName("li")
     for (let i = 0; i < li.length; i++) {
-      const element = li[i];
-      element.classList.remove("prev", "prev2", "active", "next", "next2");
+      const element = li[i]
+      element.classList.remove("prev", "prev2", "active", "next", "next2")
       // element.setAttribute(`data-index${indexNext}`);
     }
     sliderTop
       .querySelector('li[data-index="' + indexPrev2 + '"]')
-      ?.classList.add("prev2");
+      ?.classList.add("prev2")
     sliderTop
       .querySelector('li[data-index="' + indexPrev + '"]')
-      ?.classList.add("prev");
+      ?.classList.add("prev")
     sliderTop
       .querySelector('li[data-index="' + activeIndex + '"]')
-      ?.classList.add("active");
+      ?.classList.add("active")
     sliderTop
       .querySelector('li[data-index="' + indexNext + '"]')
-      ?.classList.add("next");
+      ?.classList.add("next")
     sliderTop
       .querySelector('li[data-index="' + indexNext2 + '"]')
-      ?.classList.add("next2");
-    return activeIndex;
-  };
+      ?.classList.add("next2")
+    return activeIndex
+  }
 
   return (
     <section id="home">
@@ -191,32 +190,45 @@ const HeroSlider = () => {
                 <div className="item has_video">
                   <img src="/img/1x1.jpg" alt="" />
                   {!isClicked && (
-                    <><a
-                      className="popup-youtube metaportal_fn_videobutton"
-                      href="https://www.youtube.com/embed/7e90gBu4pas"
-                      onClick={handleAnchorClick}
-                    >
-                      <img src="/svg/play.svg" alt="" className="fn__svg" />
-                    </a><div className="item_in">
-                        <div className="img" data-bg-img="/img/slider/3.png" />
-                      </div></>
+                    <>
+                      <a
+                        className="popup-youtube metaportal_fn_videobutton"
+                        href="https://www.youtube.com/embed/7e90gBu4pas"
+                        onClick={handleAnchorClick}
+                      >
+                        <img src="/svg/play.svg" alt="" className="fn__svg" />
+                      </a>
+                    </>
                   )}
-                                   <div className="item_in">
+                  <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/3.png" />
                   </div>
-									
-                  {isClicked && (
+
+                  {/* {isClicked && (
                     <UserDataFetcher />
                 
-                  )}
+                  )} */}
                 </div>
               </li>
               <li className="next2" data-index={4}>
                 <div className="item">
                   <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
+
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/4.png" />
                   </div>
+
+                  {/* {isClicked && (
+                    <UserDataFetcher />
+                
+                  )} */}
                 </div>
               </li>
               <li data-index={5}>
@@ -279,9 +291,8 @@ const HeroSlider = () => {
         {/* !Description */}
       </div>
     </section>
-  );
-};
-
+  )
+}
 
 const CombinedComponent = () => {
   return (
@@ -289,7 +300,7 @@ const CombinedComponent = () => {
       <HeroSlider />
       <UserDataFetcher />
     </>
-  );
-};
+  )
+}
 
-export default HeroSlider;
+export default HeroSlider

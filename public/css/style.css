@@ -6434,6 +6434,27 @@ a.metaportal_fn_videobutton:hover .fn__svg,
 	z-index: 10;
 }
 
+.mfp-iframe-holder .mfp-req-content {
+	width: 30%;
+}
+.mfp-reqs-out {
+	width: 542px;
+	max-width: 100%;
+	padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.5);
+	background-color: rgba(255,255,255,.25);
+	position: relative;
+	z-index: 5;
+}
+
+.mfp-reqs-in{
+	background-size: cover;
+	border-radius: 10px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
 /* CSS specific to iOS devices */ 
 @media not all and (min-resolution:.001dpcm) {
 	.fn__gradient_title{
