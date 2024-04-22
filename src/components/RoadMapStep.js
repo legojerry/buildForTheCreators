@@ -54,7 +54,7 @@ Unlock GATEs through puzzles, secrets, and community engagement, and gain access
                       <p className="date">Q4 2024</p>
                       <h3 className="title">Open GATE Ecosystem, Leaderboard Competitions, Airdrop Seasons Begin</h3>
                       <p className="desc">
-                      The GATEs you see before you are the atomic unit of cross-metaverse experiences. Our platform expansion will continue with the Open GATE Ecosystem, where we provide tools and pluggable infrastructure for Creators to own a GATE and to build their own immersive experiences, all ONCHAIN. We will begin our Airdrop Seasons, with EYE, SOUL and GATES leaderboards. 
+                      The GATEs you see before you are the atomic unit of cross-metaverse experiences. Our platform expansion will continue with the Open GATE Ecosystem, where we provide tools and pluggable infrastructure for Creators to own a GATE and to build their own immersive experiences, all ONCHAIN. We will begin our Airdrop Seasons, with :EYE:, SOUL and GATES leaderboards. 
                       </p>
                     </div>
                   </div>
