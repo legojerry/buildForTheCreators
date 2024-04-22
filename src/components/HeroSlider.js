@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import UserDataFetcher from "/src/components/UserDataFetcher"
 
 const UserDataComponent = ({ apiUrl }) => {
   const [displayName, setDisplayName] = useState("")
@@ -29,7 +30,7 @@ const UserDataComponent = ({ apiUrl }) => {
   )
 }
 
-export const HeroSlider = () => {
+const HeroSlider = () => {
   const [isClicked, setIsClicked] = useState(false)
 
   const handleAnchorClick = () => {
@@ -310,17 +311,26 @@ export const HeroSlider = () => {
           <h1>Learn how to unlock GATEs.</h1>
           <p>Tap a locked GATE to see the requirements for unlock.</p>
           <a
-            href="https://opensea.io/"
+            href="https://warpcast.com/rskagy.eth/0x5acbbd99"
             className="metaportal_fn_button"
             target="_blank"
             rel="noreferrer"
           >
-            <span>Buy On Opensea</span>
+            <span>Provide Feedback</span>
           </a>
         </div>
         {/* !Description */}
       </div>
     </section>
+  )
+}
+
+const CombinedComponent = () => {
+  return (
+    <>
+      <HeroSlider />
+      <UserDataFetcher />
+    </>
   )
 }
 
