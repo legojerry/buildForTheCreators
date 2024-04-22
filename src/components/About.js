@@ -21,7 +21,7 @@ const About = () => {
               The Creators is a discovery platform with gamification of creative drops, limited events, and exclusive content. Unlock Gates that lead to this content by solving puzzles, finding secrets, and participating in community engagement initiatives. By meeting onchain, social, and identity-based requirements, you&apos;ll gain  👁️  points, GATEs, & SOUL - which measures your unique achievements, proving your skill level on the global leaderboard.
               </p>
               <p>
-              For our MVP alpha test, players unlock achievements by expanding their web3 footprint, finding onchain secrets, such as owning certain NFTs, holding certain levels of DEGEN token. We hope you'll enjoy our MVP alpha test. If you give us feedback below, you&apos;ll earn points on our platform for future drops:
+              For our MVP alpha test, players unlock achievements by expanding their web3 footprint, finding onchain secrets, such as owning certain NFTs, holding certain levels of DEGEN token. We hope you&apos;ll enjoy our MVP alpha test. If you give us feedback below, you&apos;ll earn points on our platform for future drops:
               </p>
             </div>
             <Link href="https://warpcast.com/rskagy.eth/0x5acbbd99">
