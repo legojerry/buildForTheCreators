@@ -9,7 +9,7 @@ const Footer = () => {
             <p>
               Copyright 2024 — Designed &amp; Developed by{" "}
               <a
-                href="https://thecreators.com"
+                href="https://the-creators.xyz"
                 target="_blank"
                 rel="noreferrer"
               >
