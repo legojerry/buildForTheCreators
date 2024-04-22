@@ -8,51 +8,6 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
     <Fragment>
       <div className="metaportal_fn_mobnav">
         <div className="mob_top">
-          <div className="social_trigger">
-            <div className="trigger" onClick={() => navigationToggle(true)}>
-              <span />
-            </div>
-            <div className="social">
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Fb.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.twitter.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Tw.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    In.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Ln.
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div className="wallet">
             <a
               href="#"
@@ -70,12 +25,6 @@ const MobileNavigation = ({ walletToggle, navigationToggle }) => {
                 <img src="/img/logo.png" alt="" />
               </a>
             </Link>
-          </div>
-          <div
-            className={`trigger ${toggle ? "active" : ""}`}
-            onClick={() => setToggle(!toggle)}
-          >
-            <span />
           </div>
         </div>
         <div className="mob_bot" style={{ display: toggle ? "block" : "none" }}>
