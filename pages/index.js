@@ -30,7 +30,6 @@ const Index = () => {
       <RoadMapSlider />
       {/* !Section RoadMap */}
       {/* Section Divider */}
-      <SectionDivider />
       {/* !Section Divider */}
       {/* Section News */}
       {/* !Section News */}
