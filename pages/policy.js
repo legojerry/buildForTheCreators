@@ -16,8 +16,8 @@ const Policy = () => {
             </div>
           </div>
           <p>
-            <strong>Suggested text:</strong> Our website address is:
-            https://frenify.net/envato/frenify/html/meta-portal/1/
+            Our website address is:
+            https://the-creators.xyz
           </p>
           <h3 className="fn__maintitle" data-text="Comments">
             Comments

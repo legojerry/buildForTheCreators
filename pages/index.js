@@ -12,18 +12,16 @@ const Index = () => {
     <Layout pageTitle={"Home"}>
       {/* Home Section */}
       <HeroSlider />
+      <SectionDivider />
       {/* !Home Section */}
       {/* Fun Facts */}
-      <FunFacts />
       {/* !Fun Facts */}
       {/* About Section */}
       <About />
       {/* !About Section */}
       {/* Section Divider */}
-      <SectionDivider />
       {/* !Section Divider */}
       {/* Collection Section */}
-      <Collection />
       {/* !Collection Section */}
       {/* Section Divider */}
       <SectionDivider />
@@ -35,13 +33,10 @@ const Index = () => {
       <SectionDivider />
       {/* !Section Divider */}
       {/* Section News */}
-      <News />
       {/* !Section News */}
       {/* Section Divider */}
-      <SectionDivider />
       {/* !Section Divider */}
       {/* Section */}
-      <Contact />
     </Layout>
   );
 };
