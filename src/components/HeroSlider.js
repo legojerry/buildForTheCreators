@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import UserDataFetcher from "/src/components/UserDataFetcher"
 
 const UserDataComponent = ({ apiUrl }) => {
   const [displayName, setDisplayName] = useState("")
@@ -30,7 +29,7 @@ const UserDataComponent = ({ apiUrl }) => {
   )
 }
 
-const HeroSlider = () => {
+export const HeroSlider = () => {
   const [isClicked, setIsClicked] = useState(false)
 
   const handleAnchorClick = () => {
@@ -172,7 +171,14 @@ const HeroSlider = () => {
             <ul>
               <li className="prev" data-index={1}>
                 <div className="item">
-                  <img src="/img/1x1.jpg" alt="" />
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/1.png" />
                   </div>
@@ -180,26 +186,29 @@ const HeroSlider = () => {
               </li>
               <li className="active" data-index={2}>
                 <div className="item">
-                  <img src="/img/1x1.jpg" alt="" />
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/2.png" />
                   </div>
                 </div>
               </li>
               <li className="next" data-index={3}>
-                <div className="item has_video">
-                  <img src="/img/1x1.jpg" alt="" />
-                  {!isClicked && (
-                    <>
-                      <a
-                        className="popup-youtube metaportal_fn_videobutton"
-                        href="https://www.youtube.com/embed/7e90gBu4pas"
-                        onClick={handleAnchorClick}
-                      >
-                        <img src="/svg/play.svg" alt="" className="fn__svg" />
-                      </a>
-                    </>
-                  )}
+                <div className="item">
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/3.png" />
                   </div>
@@ -233,7 +242,14 @@ const HeroSlider = () => {
               </li>
               <li data-index={5}>
                 <div className="item">
-                  <img src="/img/1x1.jpg" alt="" />
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/5.png" />
                   </div>
@@ -241,7 +257,14 @@ const HeroSlider = () => {
               </li>
               <li data-index={6}>
                 <div className="item">
-                  <img src="/img/1x1.jpg" alt="" />
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/6.png" />
                   </div>
@@ -249,7 +272,14 @@ const HeroSlider = () => {
               </li>
               <li className="prev2" data-index={7}>
                 <div className="item">
-                  <img src="/img/1x1.jpg" alt="" />
+                <img src="/img/1x1.jpg" alt="" />
+                  <a
+                    className="popup-youtube metaportal_fn_videobutton"
+                    href="Req"
+                    onClick={handleAnchorClick}
+                  >
+                    <img src="/svg/lock.svg" alt="" className="fn__svg" />
+                  </a>
                   <div className="item_in">
                     <div className="img" data-bg-img="/img/slider/7.png" />
                   </div>
@@ -291,15 +321,6 @@ const HeroSlider = () => {
         {/* !Description */}
       </div>
     </section>
-  )
-}
-
-const CombinedComponent = () => {
-  return (
-    <>
-      <HeroSlider />
-      <UserDataFetcher />
-    </>
   )
 }
 

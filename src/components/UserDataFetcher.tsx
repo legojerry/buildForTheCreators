@@ -1,25 +1,41 @@
-import React from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-const UserDataComponent = ({ apiUrl }) => {
-  const [displayName, setDisplayName] = React.useState('');
+// Create a context to manage user data
+const UserContext = createContext();
 
-  React.useEffect(() => {
+// Custom hook to access user data and fetch it if not already cached
+const useUserData = (apiUrl) => {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error('Failed to fetch user data');
+        const cachedUserData = localStorage.getItem(apiUrl);
+        if (cachedUserData) {
+          setUserData(JSON.parse(cachedUserData));
+        } else {
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+            throw new Error('Failed to fetch user data');
+          }
+          const userData = await response.json();
+          localStorage.setItem(apiUrl, JSON.stringify(userData));
+          setUserData(userData);
         }
-        const userData = await response.json();
-        const userDisplayName = userData.result.user.displayName;
-        setDisplayName(userDisplayName);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
 
     fetchData();
-  }, [apiUrl]); // Dependency array includes apiUrl to re-fetch data when it changes
+  }, [apiUrl]);
+
+  return userData;
+};
+
+const UserDataComponent = ({ apiUrl }) => {
+  const userData = useUserData(apiUrl);
+  const displayName = userData ? userData.result.user.displayName : '';
 
   return (
     <div>
